@@ -1,0 +1,185 @@
+
+\documentclass[pdflatex,sn-nature]{sn-jnl}% Basic Springer Nature Reference Style/Chemistry Reference Style
+
+%%=========================================================================================%%
+%% the documentclass is set to pdflatex as default. You can delete it if not appropriate.  %%
+%%=========================================================================================%%
+
+%%\documentclass[sn-basic]{sn-jnl}% Basic Springer Nature Reference Style/Chemistry Reference Style
+
+%%Note: the following reference styles support Namedate and Numbered referencing. By default the style follows the most common style. To switch between the options you can add or remove Numbered in the optional parenthesis. 
+%%The option is available for: sn-basic.bst, sn-chicago.bst%  
+ 
+%%\documentclass[pdflatex,sn-nature]{sn-jnl}% Style for submissions to Nature Portfolio journals
+%%\documentclass[pdflatex,sn-basic]{sn-jnl}% Basic Springer Nature Reference Style/Chemistry Reference Style
+%%\documentclass[pdflatex,sn-mathphys-num]{sn-jnl}% Math and Physical Sciences Numbered Reference Style
+%%\documentclass[pdflatex,sn-mathphys-ay]{sn-jnl}% Math and Physical Sciences Author Year Reference Style
+%%\documentclass[pdflatex,sn-aps]{sn-jnl}% American Physical Society (APS) Reference Style
+%%\documentclass[pdflatex,sn-vancouver-num]{sn-jnl}% Vancouver Numbered Reference Style
+%%\documentclass[pdflatex,sn-vancouver-ay]{sn-jnl}% Vancouver Author Year Reference Style
+%%\documentclass[pdflatex,sn-apa]{sn-jnl}% APA Reference Style
+%%\documentclass[pdflatex,sn-chicago]{sn-jnl}% Chicago-based Humanities Reference Style
+
+%%%% Standard Packages
+%%<additional latex packages if required can be included here>
+
+\usepackage{graphicx}%
+\usepackage{multirow}%
+\usepackage{amsmath,amssymb,amsfonts}%
+\usepackage{amsthm}%
+\usepackage{mathrsfs}%
+\usepackage[title]{appendix}%
+\usepackage{xcolor}%
+\usepackage{textcomp}%
+\usepackage{manyfoot}%
+\usepackage{booktabs}%
+\usepackage{algorithm}%
+\usepackage{algorithmicx}%
+\usepackage{algpseudocode}%
+\usepackage{listings}%
+
+
+
+\begin{document}
+
+I have now had a chance to have a more careful read through the paper, with comments attached below. You can probably sense that my comments surrounding the cluster analysis are a little confused, trying to figure out what might be driving the results. If the inferences are reliable (and not prior driven), it would be interesting to try and theorize why the results appear the way they do - with some clusters showing increases in superspreading behaviour and others showing greater homogeneity. I have tried to offer some ideas, but I am not sure that anyone of them are that convincing or complete.
+
+If any of the comments are unclear or require further clarification, I would be very happy to discuss further (e.g., over Zoom).
+
+My affiliation is: Department of Public Health and Tropical Medicine, College of Medicine and Dentistry, James Cook University, 1 James Cook Dr, Townsville, 4814
+
+\textcolor{blue}{Addressed}
+
+The abstract mentions that "modelling transmission dynamics using bacterial data remains problematic", but this only really elaborated in one sentence in the main text (lines 95-98). For additional context, is it possible to add the length of the N. gonorrhoeae genome (2e6 bp)? What is its mutation rate (5e-6 subs/site/yr)? What is the sampling time period? Is the product of these "measurably evolving"? I know a lot of these details are provided in the appendix, but the problem seems unresolved in the introduction.
+
+\textcolor{blue}{Addressed}
+
+Line 101: Be careful to avoid the term "non-spreaders"; did you mean "non-superspreaders"?
+
+\textcolor{blue}{Addressed}
+
+Line 130: This might be a bit greedy of me here, but this could be an opportunity cite an article of mine (https://www.nature.com/articles/s41598-023-42567-3) which discusses the parameterization used here. This article could also be referenced if you chose to relate the superspreader fraction with the symptomatic fraction.
+
+\textcolor{blue}{Addressed}
+
+
+Equations 1, 2 and 3: I know it is reasonably obvious from the context, but I still think it would be helpful to formally define each of the inter-deme reproductive numbers $R_{e x, y}$.
+
+\textcolor{blue}{Addressed}
+
+I suspect it is a consequence of equations 2 and 3 that superspreaders and non-superspreaders are born in the ratio f : 1-f regardless of their ancestry, but this fact is not immediately obvious (at least to me), could perhaps be spelt out more both in the text and in the equations. In the same vein, and this is quite subjective, but I wonder if it would be more natural to define $f_{ss}$ and $T_a$ in terms of the total type-specific reproduction numbers, e.g., $T_a = R_{e,ss} / R_{e,ns}$
+
+\textcolor{blue}{Addressed: we kept our equations for consistency with Tanja's 2011 paper. However, we now explicitly state that the ratio at which superspreaders and non-superspreaders are born is independent of their ancestry}
+
+Lines 211-212: Is the error dependence of $f_{ss}$ on $T_a$ possibly a consequence of the non-identifiability of $f_{ss}$ when $T_a$ approaches 1? (That is, superspreaders and non-superspreaders become indistinguishable when $T_a \to 1$). Although I suppose this observation doesn't contradict the point you make in this sentence.
+
+\textcolor{blue}{Yes, that is what we intended. We have rephrased the sentence to make this clearer}
+
+Fig 1. I found the panel labels difficult to follow, sorry (perhaps lower case for sub-panel headers?). I am also getting lost with the different simulation settings: the earlier text described four data availability simulation scenarios, but these now appear to be split further into four different transmission parameter scenarios. And then, I can't see the known tips v. unknown tips scenarios segregated in the plots. Sorry for misunderstanding.
+
+\textcolor{blue}{Addressed: we have changed the terms throughout the manuscript to to the following: Type of data - whether it is sequences or trees; treatment - whether tip states are specified or intergrated over (only in supp info); Parameterisation - what parameter combination of Ta and fss we set. With this changue we think it is easier to follow the section and to understand then the figure}
+
+Fig 2. Are the marginal priors in the side panels designed to represent the theoretical priors that were used, or are these the realized priors (i.e., the distributions of sampled parameters used for simulation)?
+
+\textcolor{blue}{These are the `theoretical' priors. Now, this is described in methods}
+
+The analysis primarily considers the error, uncertainty, etc. of the superspreading parameters Re, $T_a$ and $f_{ss}$. Because it would likely be of great interest, I wonder how the superspreader parameterization improves (or potentially degrades) the inference of the origin? (There may be other parameters that are of interest, but this one sprung to mind when reviewing Fig 3.)
+
+\textcolor{blue}{This is a good point, but it would require substantial more analyses that are not the focus of this particular paper. It is quite uncertain in some of our clusters, as is common in the bd (sky or other) models.}
+
+The comment above also then raises the question as to which model was used to infer the origin, to determine whether a skyline model was required. Presumably it was a superspreader model; was it also a skyline model? If not a skyline model, would re-running it with a skyline model revise the estimates for the origin?
+
+\textcolor{blue}{Addresssed. We used two skyline intervals: one for before and after lockdowns for supersspreading paramters, and one for before and after the first sample was collected (only to sampling proportion)}
+
+Line 340: Is the sampling proportion estimate of 6.34e-5 suspiciously low? Even if this cluster only included 10 people, that would correspond to more than 100,000 infections; and that's just for this single cluster. Sorry if I am misinterpreting.
+
+\textcolor{blue}{This parameter has a lot of uncertainty. But there are several factors that come come at play: (i) the degree of assortativitiy could impact sampling proportions in small trees; (ii) our assumption that sampling proportions are the same for both demes is actually a bit wrong; (iii) in small data sets we might miss a deme entirely, resulting in undersestimation of the sampling proportion. We reran the analysis while constraining the sampling proportion to be greater than 0.005. The results were consistent with those obtained in the original analysis (see the Supplementary Material)}
+
+Line 405: Is Re1 defined? Presumably this is the pre-lockdown total effective reproduction number, but I couldn't see a definition.
+
+\textcolor{blue}{Addressed.}
+
+Lines 416-417: How did you determine that a threshold of 1 for the Bayes' factor was tantamount to "strong evidence"? I recognize the earlier point that a lot of the prior mass was being assigned to low $f_{ss}$, but how then did this translate through to a threshold of 1? (Just noting the commonly-quoted Jeffreys' scale of Bayes' factors for which strong evidence is anything above 10)
+
+\textcolor{blue}{Good spotting. We will use a cutoff of 5, which is `substantial evidence'.}
+
+Fig 4. Are the $T_a$ posteriors potentially just recovering the prior? I would expect the clusters with $f_{ss} \approx 0$ to have $T_a$ reproduce the prior, but what about the other clusters where $f_{ss} > 0$? It seems remarkably coincidental to have such uniform estimates for $T_a$.
+
+\textcolor{blue}{Addressed: We do think that this is real and that the transmission advantage is high across clusters. Even if the parameters are identifiable (in simulations we recover the correct values), we think there is a non-identifiability problem due to the real data. If we assume that superspreading is unimodal rather than multimodal, there is no clear way of splitting the population into two demes, making different combinations of $T_a$ and $f_{ss}$ possible. It is also true that 30 is the maximum value that our prior allows for $T_a$, and for some reason our model tends to choose states with larger values of $T_a$}
+
+It's interesting that the proportion of superspreaders seems to mostly increase across the lockdown boundary. Could this be explained by a greater relative reduction in non-superspreaders contributing towards transmission than superspreaders? To put it simply, non-superspreaders comply and superspreaders continue to behave badly? Cluster 146 is an interesting case: the proportion of superspreaders jumps from about 10 to 40\%; whilst there is relatively little change in the effective reproduction number. Does this mean that superspreaders were responsible for most of the transmission anyway (they are estimated to be more than 30x more transmissible) and the non-superspreaders behaved themselves?
+
+\textcolor{blue}{Totally agree. See section `contribution of non-superspreaders'}
+
+Lines 412-417: I am curious how the Bayes' factor is estimated? Since you effectively have $T_a > 1$, it looks like you have the (fortunate) scenario where the regular model is perfectly nested within the superspreader model with $f_ss = 0$ being the point of collapse. In this case you might consider estimating the Bayes' factor using the Savage-Dickey density ratio (see: Bayesian hypothesis testing for psychologists: A tutorial on the Savage–Dickey method): simply take the ratio of the marginal posterior of $f_ss$ evaluated at $f_ss = 0$ and divide it by the marginal prior of $f_ss$ evaluated at the same point ($f_ss = 0$). This is an exact expression for the Bayes' factor comparing the two models, and avoids any arbitrary cutoffs for superspreader proportion (e.g., <0.1 \%).
+
+\textcolor{blue}{We could try running the mode where $f_ss=0$ is allowed, or where we fix it, but this is not immediately relevant and not our main point, so we'll stick to the posterior to prior odds ratios. }
+
+What do you think is the reason for different superspreading behavior before and after lockdowns across the different clusters? I have this vague memory from the original Lloyd-Smith paper that "population-wide control (like lockdowns) reduce heterogeneity".
+
+\textcolor{blue}{It seems that the increase in the fraction of superspreaders (SS) after the lockdown is due to a depletion of non-superspreaders (NS) from the transmission chain. However, in some cases, SS also appear to be depleted after the lockdown, and this pattern is associated with a drastic reduction in Re (clusters 180 and 230). In these cases, the opposite pattern seems to occur: a depletion of SS. One possible explanation is that, after the lockdown, the transmission links between SS and NS are disrupted, and we only observe the remaining NS, which are no longer influenced by SS. This point has been addressed in our explanation of clusters 180 and 230}
+
+Lines 472-473: Is the observation that epidemic decline was only possible when both NS and SS were decreasing possibly a consequence of the effectively fixed ratio $T_a$ across the lockdown period? If NS and SS both vary in lockstep, then a decrease in Re requires a decrease in both NS and SS.
+
+- I realize that I have probably just misread: by decline I suspect you mean Re < 1, not Re2 < Re1. If so, perhaps the wording could be made a little clearer. Further, if "decline" does refer to Re < 1; then I don't think the formula definition of $Re = f_ss * Re_{ss} + (1 - f_ss) * Re_{ns} < 1$ precludes having either NS or SS greater than 1. Alternatively, I think the condition Re > 1 does require at least one of NS or SS to be greater than 1.
+
+\textcolor{blue}{Addressed. clarified with the definitions. }
+
+Line 474: Is it "nor" or "or"?
+
+Are the parameters $T_a$ and $f_ss$ correlated at all?
+
+\textcolor{blue}{Not that we know that we could tease out in the marginal MCMC plots}
+
+Hyperpriors: How were hyperpriors for $T_a$ and $f_ss$ determined?
+
+\textcolor{blue}{We basically looked at the marginal prior distros, but the goal here was to balance plausibility and uncertainty in the prior parameters. We added this sentence to the methods to explain our reasoning:\textit{ 
+For our choice of hyperprior distributions we aimed to balance biological plausibility and a high degree of uncertainty. For example, the Beta prior on $f_{ss}$ reflects the fact that this parameter can only range between 0 and 1. We constrained its second parameter (sometimes known as \textit{beta}) to 5, and for the first parameter (known as $\alpha$) we chose a uniform hyperprior between 0 and 10. The resulting prior on $f_{ss}$ ranges from a skewed distribution with most density (i.e. the 95\% quantile width) between 0.00 and 0.01 to one where the density is concentrated between 0.41 and 0.87.}}
+
+The gamma distribution has two parameters; what rate parameter was used?
+
+\textcolor{blue}{The gamma distribution for the site rates in BEAST uses by default a 1-parameter parametrisation. It takes a shape, and then the rate is defined as 1/shape.}
+
+Is complete removal upon sampling an appropriate assumption for N Gonorrhoeae?
+
+\textcolor{blue}{Generally yes, because you get treated upon getting a positive test.}
+
+Can the non/super-spreading proportions be linked to the asymptomatic / symptomatic proportions?
+
+\textcolor{blue}{Yes, probably. However we have no data on symptoms at all here...}
+
+Figure 3. Panel a uses means, panels B-C use medians
+
+\textcolor{blue}{Typo and now corrected. We only use means}
+
+What about a change in sampling rates across the lockdown boundary (not just Re, $T_a$ and $f_ss$)? Do you think lockdowns impacted the sampling rate? Could this explain some of the observed reduction in Re?
+
+\textcolor{blue}{It is an interesting point. However, we do not have info about how the lockdown affected the protocols for the screening and sampling of N. gono and the reduction in Re is expeced due to the reduction in contacts}
+"was was" line 492
+
+\textcolor{blue}{Addressed}
+
+"this this" line 585
+
+\textcolor{blue}{Addressed}
+
+"implement a implement" line 592
+
+\textcolor{blue}{Addressed}
+
+I don't think the discrete trait assumption is as damaging as you think; even with discrete traits, individuals within those traits can have a continuum of individual reproduction ratios (you are effectively trying to model things by a mixture of exponentials). Again, this is another opportunity for me to shamelessly promote my Scientific Reports paper which demonstrates that two-type models are sufficient for reproducing observed transmission heterogeneity.
+
+\textcolor{blue}{Nice point. Added.}
+
+Line 670: birth-death "model"
+
+\textcolor{blue}{Addressed}
+
+Line 715: Did the real data analysis not consider invariant sites? (I only ask because it looks like it was considered for the simulated data)
+
+\textcolor{blue}{Addressed: We use invariant sites for simulations, to generate genomes as similar as possible to the real N. gono genomes. However for the analysis we do not use invariant sites as we assume that the gamma distribution for rates is enough}
+
+
+
+\end{document}
+
